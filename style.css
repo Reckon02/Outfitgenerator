@@ -14,13 +14,26 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-align: center;
-    width: 90%; /* Take up 90% of screen width */
-    max-width: 900px; /* But not wider than 900px */
+
+}
+
+.navbar-header {
+    background-color: #fbca1f;
+    padding: 1px;
+        border-radius: 10px 10px 0 0; /* Rounded top corners, sharp bottom to align with container */
+    margin: -35px -35px 30px -35px; /* Pull it into the container's padding area and add bottom margin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow below the navbar */
+    text-align: center; /* Center the h1 text inside */
+    border: 3px solid black;
+    
 }
 
 h1 {
     color: #000000;
+    font-family: inherit;
     margin-bottom: 30px;
+    font-weight: 800;
+
 }
 
 .outfit-display {
@@ -37,7 +50,7 @@ h1 {
     /* Make this larger using relative units or larger fixed pixels if desired */
     width: 350px; /* Increased from 250px - adjust as needed */
     height: 490px; /* Increased from 350px - adjust proportionally with width */
-    background-color: #e0e0e0;
+    background-color: #999999;
     border-radius: 5px;
     margin-bottom: 20px;
     position: relative; /* KEY: This is the positioning context */
