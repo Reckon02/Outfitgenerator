@@ -7,10 +7,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Make body at least full viewport height */
-}
+    background-color: #ffffff;
 
 .container {
-    background-color: #ffffff; /* White background for the main container */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -20,7 +19,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #000000;
     margin-bottom: 30px;
 }
 
@@ -31,17 +30,84 @@ h1 {
     margin-bottom: 40px;
 }
 
+
+/* ... (existing basic body and container styles) ... */
+
 .silhouette-area {
-    width: 250px; /* Example width */
-    height: 350px; /* Example height */
-    background-color: #e0e0e0; /* Placeholder background for the silhouette */
+    /* Make this larger using relative units or larger fixed pixels if desired */
+    width: 350px; /* Increased from 250px - adjust as needed */
+    height: 490px; /* Increased from 350px - adjust proportionally with width */
+    background-color: #e0e0e0;
     border-radius: 5px;
-    margin-bottom: 20px; /* Space below silhouette on small screens */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensure image doesn't overflow */
+    margin-bottom: 20px;
+    position: relative; /* KEY: This is the positioning context */
+    overflow: hidden;
 }
+
+/* Base style for all clothing layer images */
+.clothing-layer {
+    position: absolute; /* Allows precise positioning relative to .silhouette-area */
+    object-fit: contain; /* Scales image within its specified dimensions */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    /* Add for more flexible centering if needed */
+    transform-origin: center center; /* Ensures transformations scale/rotate from the center */
+}
+
+/* Individual Layer Positioning and Sizing with Percentages and Proportional Positioning */
+
+.base-silhouette {
+    width: 100%; /* Base image fills the area */
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.top-layer {
+    /* EXAMPLE: Adjust these percentages based on your image sizes and how they fit */
+    width: 72%; /* Example: 180px / 250px = 0.72 = 72% based on old size */
+    height: 38%; /* Example: 150px / 490px = ~0.306 = 30.6% based on new height */
+    /* Use 'left' and 'top' as percentages, AND optionally 'transform' for true centering */
+    top: 10.2%; /* Example: 50px / 490px = ~0.102 = 10.2% */
+    left: 0; /* Center horizontally */
+
+    z-index: 4;
+}
+
+.bottom-layer {
+    width: 60%; /* Example: 150px / 250px = 0.6 = 60% */
+    height: 60%; /* Example: 180px / 490px = ~0.367 = 36.7% */
+    top: 35%; /* Example: 190px / 490px = ~0.388 = 38.8% */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Pull left by half its own width to truly center */
+    z-index: 3;
+}
+
+.outer-layer {
+    /* Remember the offset for visibility! */
+    width: 80%; /* Example: 200px / 250px = 0.8 = 80% */
+    height: 50%; /* Example: 220px / 490px = ~0.449 = 44.9% */
+    top: 6.1%; /* Example: 30px / 490px = ~0.061 = 6.1% */
+    /* Adjust left percentage for your desired offset */
+    left: 60%; /* Example: Shift more to the right than 50% */
+    transform: translateX(-50%); /* Pull left by half its own width */
+    z-index: 5;
+}
+
+.shoes-layer {
+    width: 40%; /* Example: 100px / 250px = 0.4 = 40% */
+    height: 20%; /* Example: 50px / 490px = ~0.102 = 10.2% */
+    top: 80%; /* Example: 300px / 490px = ~0.70 = 70% */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Pull left by half its own width to truly center */
+    z-index: 2;
+}
+
+
+/* ... (rest of your existing styles, like outfit-text-area, button, and media query) ... */
+
+/* ... (rest of your existing styles, like outfit-text-area, button, and media query) ... */
+
 
 .silhouette-area img {
     max-width: 100%;
@@ -52,31 +118,43 @@ h1 {
 
 
 .outfit-text-area {
-    font-size: 1.4em;
-    line-height: 1.6;
-    color: #555;
+    font-family: 'Montserrat' , serif;
+    font-size: 1.2em;
+    line-height: 1.3;
+    color: #000000;
     text-align: left; /* Align text to the left within its area */
     max-width: 400px; /* Limit text width for readability */
+    padding: 3%;
+    border-radius: 2%;
+    font-weight: 600;
+    
 }
 
 .outfit-text-area span {
-    font-weight: bold;
-    color: #007bff; /* A nice blue for the outfit items */
+    font-weight: 800;
+    color: #ffca0b; /* A nice blue for the outfit items */
 }
 
 button {
-    background-color: #007bff; /* Blue button */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }
 
 /* Media query for larger screens (e.g., desktops) */
@@ -94,4 +172,5 @@ button:hover {
     .outfit-text-area {
         text-align: left;
     }
+}
 }
