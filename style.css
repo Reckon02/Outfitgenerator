@@ -81,16 +81,16 @@ h1 {
     width: 72%; /* Example: 180px / 250px = 0.72 = 72% based on old size */
     height: 38%; /* Example: 150px / 490px = ~0.306 = 30.6% based on new height */
     /* Use 'left' and 'top' as percentages, AND optionally 'transform' for true centering */
-    top: 10.2%; /* Example: 50px / 490px = ~0.102 = 10.2% */
+    top: 4%; /* Example: 50px / 490px = ~0.102 = 10.2% */
     left: 0; /* Center horizontally */
-
+    rotate: -5deg;
     z-index: 4;
 }
 
 .bottom-layer {
-    width: 60%; /* Example: 150px / 250px = 0.6 = 60% */
-    height: 60%; /* Example: 180px / 490px = ~0.367 = 36.7% */
-    top: 35%; /* Example: 190px / 490px = ~0.388 = 38.8% */
+    width: 70%; /* Example: 150px / 250px = 0.6 = 60% */
+    height: 65%; /* Example: 180px / 490px = ~0.367 = 36.7% */
+    top: 30%; /* Example: 190px / 490px = ~0.388 = 38.8% */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Pull left by half its own width to truly center */
     z-index: 3;
@@ -100,17 +100,18 @@ h1 {
     /* Remember the offset for visibility! */
     width: 80%; /* Example: 200px / 250px = 0.8 = 80% */
     height: 50%; /* Example: 220px / 490px = ~0.449 = 44.9% */
-    top: 6.1%; /* Example: 30px / 490px = ~0.061 = 6.1% */
+    top: 0%; /* Example: 30px / 490px = ~0.061 = 6.1% */
     /* Adjust left percentage for your desired offset */
     left: 60%; /* Example: Shift more to the right than 50% */
     transform: translateX(-50%); /* Pull left by half its own width */
     z-index: 5;
+    rotate: 2deg
 }
 
 .shoes-layer {
     width: 40%; /* Example: 100px / 250px = 0.4 = 40% */
     height: 20%; /* Example: 50px / 490px = ~0.102 = 10.2% */
-    top: 80%; /* Example: 300px / 490px = ~0.70 = 70% */
+    top: 81%; /* Example: 300px / 490px = ~0.70 = 70% */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Pull left by half its own width to truly center */
     z-index: 2;
@@ -137,7 +138,7 @@ h1 {
     color: #000000;
     text-align: left; /* Align text to the left within its area */
     max-width: 400px; /* Limit text width for readability */
-    padding: 3%;
+    padding: 2%;
     border-radius: 2%;
     font-weight: 600;
     
@@ -158,6 +159,7 @@ button {
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   cursor: pointer;
+
 }
 
 button:hover {

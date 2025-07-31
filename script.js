@@ -8,9 +8,13 @@ const bottoms = [
   { name: "Black Jean", image: "images/black-jeans.png" },
   { name: "Grey Jean", image: "images/grey-jeans.png" },
 ];
-const outerLayers = [{ name: "Jacket", image: "images/jacket.png" }];
+const outerLayers = [
+  { name: "Worker Jacket", image: "images/worker-jacket.png" },
+  { name: "Wool Jacket", image: "images/wool-jacket.png" },
+  { name: "Leather Jacket", image: "images/leather-jacket.png" },
+];
 const shoes = [
-  { name: "Onitsuka Tigers", image: "images/tiger.png" },
+  { name: "Onitsuka's", image: "images/tiger.png" },
   { name: "Sambas", image: "/images/samba.png" },
 ];
 
