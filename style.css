@@ -1,0 +1,97 @@
+/* Basic Reset for consistent styling across browsers */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make body at least full viewport height */
+}
+
+.container {
+    background-color: #ffffff; /* White background for the main container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    width: 90%; /* Take up 90% of screen width */
+    max-width: 900px; /* But not wider than 900px */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.outfit-display {
+    display: flex; /* Use Flexbox to put silhouette and text side-by-side */
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center; /* Center items horizontally in column layout */
+    margin-bottom: 40px;
+}
+
+.silhouette-area {
+    width: 250px; /* Example width */
+    height: 350px; /* Example height */
+    background-color: #e0e0e0; /* Placeholder background for the silhouette */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Space below silhouette on small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.silhouette-area img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Remove extra space below image */
+    object-fit: contain; /* Ensure image scales within its container */
+}
+
+
+.outfit-text-area {
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: #555;
+    text-align: left; /* Align text to the left within its area */
+    max-width: 400px; /* Limit text width for readability */
+}
+
+.outfit-text-area span {
+    font-weight: bold;
+    color: #007bff; /* A nice blue for the outfit items */
+}
+
+button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Media query for larger screens (e.g., desktops) */
+@media (min-width: 768px) {
+    .outfit-display {
+        flex-direction: row; /* Arrange horizontally on larger screens */
+        justify-content: center; /* Center horizontally */
+        gap: 50px; /* Space between silhouette and text */
+    }
+
+    .silhouette-area {
+        margin-bottom: 0; /* Remove bottom margin when side-by-side */
+    }
+
+    .outfit-text-area {
+        text-align: left;
+    }
+}
